@@ -67,7 +67,7 @@ public class LeitorArquivo {
 
 			for (Produto produto : produtos) {
 				precoTotal += produto.getPreco();
-				quantidadeTotal += produto.getEstoque();
+				quantidadeTotal++;
 
 				sbTabela.append("<tr>");
 				sbTabela.append("<td>").append(produto.getNome()).append("</td>");
