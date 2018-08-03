@@ -67,7 +67,7 @@ public class LeitorArquivo {
 
 			for (Produto produto : produtos) {
 				precoTotal += produto.getPreco();
-				quantidadeTotal++;
+				quantidadeTotal += produto.getEstoque();
 
 				sbTabela.append("<tr>");
 				sbTabela.append("<td>").append(produto.getNome()).append("</td>");
@@ -97,7 +97,7 @@ public class LeitorArquivo {
 			writer.close();
 
 			Runtime.getRuntime().exec("explorer.exe " + caminho.replace("/", "\\"));
-			Double precoMedio = precoTotal / quantidadeTotal;
+			Double precoMedio = precoTotal / produtos.size();
 
 			System.out.println("Preço médio de produtos: " + nf.format(precoMedio));
 			System.out.println("Quantidade total de itens em estoque: " + quantidadeTotal);
